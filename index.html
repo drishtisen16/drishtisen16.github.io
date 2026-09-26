@@ -7,18 +7,18 @@
 <meta name="description" content="Small-business automations built in n8n — lead capture, AI assistants, doc-grounded chat bots, content engines — by a working LinkedIn ghostwriter. Five systems live in production, every screenshot timestamped.">
 <meta name="author" content="Drishti Sen">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://REPLACE-WITH-YOUR-URL/">
+<link rel="canonical" href="https://drishtisen16.github.io/">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Drishti Sen — Automation That Runs. Content That Sounds Human.">
-<meta property="og:description" content="Your leads go cold in 5 minutes. My systems answer in 4 seconds — and still sound human. Five automations live in production.">
-<meta property="og:image" content="social-card.png">
-<meta property="og:url" content="https://REPLACE-WITH-YOUR-URL/">
+<meta property="og:description" content="Most leads wait hours for a reply. My systems answer in 4 seconds — and still sound human. Five automations live in production.">
+<meta property="og:image" content="https://drishtisen16.github.io/social-card.png">
+<meta property="og:url" content="https://drishtisen16.github.io/">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Drishti Sen — Automation That Runs. Content That Sounds Human.">
 <meta name="twitter:description" content="Five automations live in production. Every screenshot timestamped, nothing mocked up.">
-<meta name="twitter:image" content="social-card.png">
+<meta name="twitter:image" content="https://drishtisen16.github.io/social-card.png">
 <meta name="theme-color" content="#0e1216">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230e1216'/%3E%3Ctext x='50' y='71' font-family='Georgia,serif' font-size='58' fill='%238fd0ae' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
@@ -31,7 +31,8 @@
   "jobTitle": "n8n Automation Specialist & LinkedIn Ghostwriter",
   "email": "mailto:drishtisen16@gmail.com",
   "telephone": "+91-9836306813",
-  "image": "drishti.jpg",
+  "image": "https://drishtisen16.github.io/drishti.jpg",
+  "url": "https://drishtisen16.github.io/",
   "address": { "@type": "PostalAddress", "addressLocality": "Kolkata", "addressCountry": "IN" },
   "knowsAbout": ["n8n automation", "workflow automation", "AI assistants", "retrieval augmented chatbots", "LinkedIn ghostwriting", "content strategy"],
   "sameAs": ["https://www.linkedin.com/in/drishtisen"]
@@ -262,6 +263,47 @@
   @media (prefers-reduced-motion:reduce){
     *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
   }
+
+  .result a{color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor}
+  .result a:hover{color:var(--accent-dk)}
+  /* ---------- SITE ASSISTANT ---------- */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .ask-fab{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:80;display:inline-flex;align-items:center;gap:10px;
+    font-family:'Segoe UI',system-ui,sans-serif;font-size:14.5px;font-weight:600;color:var(--ink);background:var(--mint);
+    border:0;border-radius:99px;padding:13px 20px 13px 16px;cursor:pointer;box-shadow:0 10px 30px rgba(14,18,22,.28)}
+  .ask-fab:hover{background:#a6dcc0}
+  .ask-fab .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);animation:askpulse 2.4s infinite}
+  @keyframes askpulse{0%{box-shadow:0 0 0 0 rgba(31,122,77,.45)}70%{box-shadow:0 0 0 9px rgba(31,122,77,0)}100%{box-shadow:0 0 0 0 rgba(31,122,77,0)}}
+  .ask-fab:focus-visible,.ask-panel button:focus-visible,.ask-panel textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .ask-panel{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:81;width:380px;max-width:calc(100vw - 32px);
+    height:min(560px,calc(100vh - 110px));display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);
+    border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(14,18,22,.3)}
+  .ask-panel[hidden],.ask-fab[hidden]{display:none}
+  .ask-head{background:var(--ink);color:#e6e9ec;padding:16px 16px 14px 18px;display:flex;gap:12px;align-items:flex-start}
+  .ask-title{font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#fff;line-height:1.25}
+  .ask-head p{font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;color:var(--grey-d);margin:5px 0 0;line-height:1.45}
+  .ask-close{margin-left:auto;background:transparent;border:0;color:var(--grey-d);font-size:24px;line-height:1;cursor:pointer;padding:0 4px;border-radius:6px}
+  .ask-close:hover{color:#fff}
+  .ask-log{flex:1;overflow-y:auto;padding:16px 14px 8px;display:flex;flex-direction:column;gap:10px;
+    font-family:'Segoe UI',system-ui,sans-serif;font-size:14.5px;line-height:1.5}
+  .ask-msg{max-width:86%;padding:10px 13px;border-radius:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+  .ask-msg.bot{align-self:flex-start;background:var(--card);border:1px solid var(--line);color:#1b2127;border-bottom-left-radius:4px}
+  .ask-msg.me{align-self:flex-end;background:var(--ink);color:#eef1f3;border-bottom-right-radius:4px}
+  .ask-msg a{color:var(--accent);font-weight:600}
+  .ask-typing{align-self:flex-start;color:var(--grey);font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;font-style:italic;padding:0 4px}
+  .ask-form{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line);background:var(--card)}
+  .ask-form textarea{flex:1;resize:none;border:1px solid var(--line);border-radius:12px;padding:10px 12px;
+    font-family:'Segoe UI',system-ui,sans-serif;font-size:14.5px;line-height:1.4;max-height:110px;background:#fff;color:#1b2127}
+  .ask-form button{border:0;border-radius:99px;background:var(--accent);color:#fff;font-weight:600;
+    font-family:'Segoe UI',system-ui,sans-serif;font-size:14px;padding:0 17px;cursor:pointer}
+  .ask-form button:hover{background:var(--accent-dk)}
+  .ask-form button:disabled{opacity:.5;cursor:default}
+  .ask-foot{font-family:'Segoe UI',system-ui,sans-serif;font-size:11px;color:var(--grey);text-align:center;padding:0 12px 10px;background:var(--card)}
+  @media (max-width:640px){
+    .ask-panel{right:8px;left:8px;width:auto;max-width:none;bottom:calc(8px + env(safe-area-inset-bottom,0px));height:min(80vh,620px)}
+    .ask-fab{right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  }
+  @media (prefers-reduced-motion:reduce){.ask-fab .dot{animation:none}}
 </style>
 </head>
 <body>
@@ -286,10 +328,10 @@
   <div class="wrap">
     <div class="kicker hero-el h0">n8n Automation Specialist &middot; LinkedIn Ghostwriter &middot; Kolkata, India (works worldwide)</div>
     <h1>
-      <span class="hero-el h1d" style="display:block">Your leads go cold in 5 minutes.</span>
-      <span class="l2 hero-el h2d">My systems answer in 4 seconds.</span>
+      <span class="hero-el h1d" style="display:block">Most leads wait hours for a reply.</span>
+      <span class="l2 hero-el h2d">Mine get one in 4 seconds.</span>
     </h1>
-    <p class="sub hero-el h3d">I'm Drishti Sen. I build small-business automations in n8n — and I write for a living, so the replies they send still sound like a person. Everything below is a live system with the timestamp still on it. No mockups.</p>
+    <p class="sub hero-el h3d">I'm Drishti Sen. I build small-business automations in n8n — and I write for a living, so the replies they send still sound like a person. Everything below is a live system with the timestamp still on it. No mockups. The assistant in the corner is one of them.</p>
     <div class="statbar sans hero-el h4d">
       <div class="stat"><b>5</b><span>automation systems live in production</span></div>
       <div class="stat"><b>18.7s</b><span>one blog post &rarr; 9 content pieces</span></div>
@@ -298,6 +340,7 @@
     </div>
     <div class="hero-btns sans hero-el h5d">
       <a class="btn btn-solid" href="#contact">Start a project</a>
+      <a class="btn btn-line" href="#ask" data-ask-open>Ask my assistant</a>
       <a class="btn btn-line" href="#work">See the live systems</a>
     </div>
   </div>
@@ -313,7 +356,7 @@
       <div class="svc reveal"><h3>Lead &amp; inquiry automation</h3><p>Webhook capture &rarr; Google Sheets &rarr; instant personalized replies. No lead sits cold over a weekend again.</p></div>
       <div class="svc reveal d1"><h3>AI assistants with judgment</h3><p>AI answers the routine instantly and escalates the sensitive to you with a ready-to-edit draft. Volume without risk.</p></div>
       <div class="svc reveal d2"><h3>Voice-matched content engines</h3><p>One input becomes a week of drafts — in your voice, because I write your voice profile first. Nothing auto-publishes.</p></div>
-      <div class="svc reveal d3"><h3>Doc-grounded chat assistants</h3><p>Telegram bots that answer customers only from your own knowledge base — and escalate what they can't answer, so your docs grow.</p></div>
+      <div class="svc reveal d3"><h3>Doc-grounded chat assistants</h3><p>Chat assistants for your website or Telegram that answer customers only from your own knowledge base — and pass on what they can't answer, so your docs grow.</p></div>
       <div class="svc reveal d4"><h3>LinkedIn ghostwriting &amp; makeovers</h3><p>Posts built from your real experience, and profile/resume rewrites that make recruiters stop scrolling. 48-hour delivery.</p></div>
     </div>
   </div>
@@ -329,16 +372,16 @@
     <p class="lede reveal">Three I can defend in detail, in full. Three more below in short. Every screenshot is a real production run with the timestamp still on it.</p>
 
     <div class="case reveal">
-      <span class="tag">Newest &middot; RAG chat assistant &middot; live</span>
-      <h3>How a small business answers Telegram messages at midnight — from its own docs, never guessing</h3>
+      <span class="tag">Newest &middot; AI front desk &middot; live &mdash; try it</span>
+      <h3>How a small business answers customer questions at midnight — from its own info sheet, never guessing</h3>
       <dl class="pbtr">
         <dt>Problem</dt><dd>Chatbots that answer everything are a liability: they invent prices and policies. Chatbots that answer nothing are a phone tree. Small businesses need the middle: instant answers from THEIR facts, and honesty about everything else.</dd>
-        <dt>Build</dt><dd>Customers message a Telegram bot. Every question is scored against a knowledge base that lives in a plain Google Sheet — the owner edits it like any spreadsheet. The AI answers strictly from the top-matching entries, personalized by name. If the docs don't cover it, the bot says so, promises a human follow-up, and the owner gets an email naming the exact missing question. Every conversation is logged with a found-in-docs flag.</dd>
-        <dt>Tools</dt><dd>n8n (Telegram trigger, code-based retrieval, IF routing), Gemini API with a grounding prompt that forbids inventing facts and a designed failure path — plus automatic retry, because production AI must survive provider hiccups. Gmail, Google Sheets.</dd>
-        <dt>Result</dt><dd class="result">Live production runs of <b>8.6 and 9.6 seconds</b>, tested from a real phone: the hours question answered exactly from the sheet; the yoga-mats question honestly deflected — and the knowledge gap emailed to the owner within seconds.</dd>
+        <dt>Build</dt><dd>A customer opens a chat link — any browser, no app, no signup. Every question is answered from a knowledge base that lives in a plain Google Sheet the owner edits like any spreadsheet. If the sheet doesn't cover it, the assistant says so and offers to pass the question on. When someone wants to book, it collects their name, contact and preferred time, saves them to the sheet and emails the owner. Every question is logged with an answered-from-the-sheet flag, so the owner sees exactly where the sheet has gaps.</dd>
+        <dt>Tools</dt><dd>n8n (public chat trigger, code-based memory and guards, IF routing), Gemini API with a grounding prompt that forbids inventing facts, a contact check that only accepts details the visitor actually typed, and automatic retry — because production AI must survive provider hiccups. Gmail, Google Sheets.</dd>
+        <dt>Result</dt><dd class="result">The first version ran on Telegram: live production runs of <b>8.6 and 9.6 seconds</b>, tested from a real phone — the hours question answered exactly from the sheet, the yoga-mats question honestly deflected, the knowledge gap emailed to the owner within seconds. The web version is live now, for a fictional gym you can test yourself: <a href="https://drishtisen16.app.n8n.cloud/webhook/5ea581b9-ab65-4f0b-b8a5-906977e56a76/chat" target="_blank" rel="noopener">try the live demo &rarr;</a></dd>
       </dl>
-      <figure><img loading="lazy" decoding="async" src="telegram-rag-assistant.jpg" alt="Real Telegram conversation with the live bot, n8n production log behind it">
-      <figcaption class="cap">The real conversation and the production log in one frame: grounded answer, honest deflection, both under 10 seconds.</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="telegram-rag-assistant.jpg" alt="Real Telegram conversation with the first version of the bot, n8n production log behind it">
+      <figcaption class="cap">The Telegram version: the real conversation and the production log in one frame — grounded answer, honest deflection, both under 10 seconds.</figcaption></figure>
       <div class="imgrow">
         <figure><img loading="lazy" decoding="async" src="rag-how-it-works.jpg" alt="Four-step diagram: customer messages the bot, bot finds the answer in the knowledge sheet, personalised reply under 10 seconds, unanswerable questions emailed to the owner"><figcaption class="cap">The four steps — including the one most bots skip: what happens when the docs don't have the answer.</figcaption></figure>
         <figure><img loading="lazy" decoding="async" src="rag-conversation.jpg" alt="Transcript showing opening hours answered exactly from the sheet and the yoga mats question honestly deflected"><figcaption class="cap">Both behaviours side by side — answered from the docs, and honestly deflected.</figcaption></figure>
@@ -368,16 +411,13 @@
       <span class="tag">Lead capture &middot; live</span>
       <h3>How form leads stop going cold: logged, alerted, answered in under four seconds</h3>
       <dl class="pbtr">
-        <dt>Problem</dt><dd>Around 80% of leads go cold when the first reply takes more than five minutes. Most small businesses take hours — because form submissions land in an inbox nobody is watching.</dd>
+        <dt>Problem</dt><dd>Firms that tried to contact a web lead within an hour were nearly seven times as likely to qualify it as those that tried even an hour later — yet in an audit of 2,241 U.S. companies, only 37% responded within the hour (<a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener">Harvard Business Review, 2011</a>). The usual reason: form submissions land in an inbox nobody is watching.</dd>
         <dt>Build</dt><dd>Any form posts to a webhook. The lead is appended to a Google Sheet, the owner gets a notification, and the lead gets a personalized confirmation — all before they've closed the tab. Works with Google Forms, website forms, or WhatsApp-to-form flows.</dd>
         <dt>Tools</dt><dd>n8n (webhook, set, append), Gmail API, Google Sheets. Chose n8n over Zapier because per-task pricing punishes exactly the lead volume this is built to create.</dd>
         <dt>Result</dt><dd class="result">Live production run: <b>3.933 seconds</b> end-to-end, every node green. The lead hears back before a human could have opened the email.</dd>
       </dl>
       <figure><img loading="lazy" decoding="async" src="lead-capture-run.jpg" alt="n8n execution of the Lead Capture Automation succeeding in 3.933 seconds"><figcaption class="cap">Receive &rarr; format &rarr; append &rarr; notify owner + confirm to lead. Jul 16 — Succeeded in 3.933s.</figcaption></figure>
-      <div class="imgrow">
-        <figure><img loading="lazy" decoding="async" src="lead-built-tested.jpg" alt="Four steps: lead submits any form, logged to your Google Sheet instantly, you get notified, lead gets a personal reply in seconds"><figcaption class="cap">The four steps — built on your accounts, docs and a week of free fixes included.</figcaption></figure>
-        <figure><img loading="lazy" decoding="async" src="lead-80-percent.jpg" alt="Headline reading 80 percent of leads go cold after 5 minutes, with the live log beneath"><figcaption class="cap">The problem this exists to solve — and the logged row showing it didn't happen.</figcaption></figure>
-      </div>
+      <figure><img loading="lazy" decoding="async" src="lead-built-tested.jpg" alt="Four steps: lead submits any form, logged to your Google Sheet instantly, you get notified, lead gets a personal reply in seconds"><figcaption class="cap">The four steps — built on your accounts, docs and a week of free fixes included.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -429,19 +469,19 @@
   <div class="wrap">
     <div class="sec-label reveal">The living portfolio &mdash; words</div>
     <h2 class="reveal">The writing side, in the wild</h2>
-    <p class="lede reveal">Excerpts from posts written and published under my own name — the same method I use when the byline is yours. Hook first line, one specific story or number, plain language, a question to close.</p>
+    <p class="lede reveal">Two short pieces in the style I write for clients — the same method I use when the byline is yours. Hook in the first line, one specific observation, plain language, a question to close.</p>
     <div class="posts">
       <div class="post reveal">
         <div class="h">Contrarian insight post</div>
-        <p>Most coaches think they need more followers to get clients from LinkedIn.</p>
-        <p>They don't. I've seen coaches with 400 followers land 3 clients in a month — and coaches with 14,000 go six months without a single inbound. The difference isn't followers. It's specificity.</p>
-        <p><em>&ldquo;LinkedIn doesn't reward popularity. It rewards relevance.&rdquo;</em></p>
+        <p>Most LinkedIn advice is about posting more.</p>
+        <p>Posting more is the easy part. The hard part is saying the one thing only you would say. Without it, volume just trains people to scroll past your name.</p>
+        <p><em>What would you say that nobody else in your field would?</em></p>
       </div>
       <div class="post reveal d1">
-        <div class="h">Story-driven post</div>
-        <p>Ghostwriting feels like theft sometimes.</p>
-        <p>A coach books a 20-minute call. She talks, I take notes, and three weeks later her DMs are full of strangers asking to work with her. But I didn't give her anything — she'd been doing the work for nine years. She just couldn't get it out of her own head and onto a page.</p>
-        <p><em>That's the whole job.</em></p>
+        <div class="h">Behind-the-build post</div>
+        <p>The hardest thing I've built is a bot that says &ldquo;I don't know.&rdquo;</p>
+        <p>Answering is easy — any AI will answer anything. Stopping is the work. Admitting the gap, and handing the question to a human. Most bots skip that step, and their customers pay for it.</p>
+        <p><em>Would you trust a bot that never says &ldquo;I don't know&rdquo;?</em></p>
       </div>
     </div>
   </div>
@@ -524,8 +564,8 @@
       <tr><td><b>Voice-Matched Content Engine</b> + your written voice profile
         <span class="desc">Send one blog post, podcast transcript or voice note. You get 3 LinkedIn posts, a newsletter section and 5 short posts — written against a voice profile I build from your own real writing, so they don't read like everyone else's AI. Everything arrives as an email digest and fills a content calendar marked Draft for review. Nothing publishes until you approve it.</span></td><td class="pr">$400 <span style="color:var(--grey);font-weight:400">(+$150/mo optional human edit)</span></td><td>7 days</td></tr>
 
-      <tr><td><b>Telegram doc-assistant</b> — bot + knowledge base + gap alerts
-        <span class="desc">A bot that answers customers only from your own facts. Your knowledge base lives in a plain Google Sheet you edit like any spreadsheet — no dashboard to learn. When a question isn't covered, the bot says so honestly, promises a human follow-up, and emails you the exact question it couldn't answer, so your documentation grows where customers actually push.</span></td><td class="pr">$350</td><td>5 days</td></tr>
+      <tr><td><b>Chat assistant</b> — website or Telegram, knowledge base + gap alerts
+        <span class="desc">An assistant that answers customers only from your own facts — on your website, or on Telegram. Your knowledge base lives in a plain Google Sheet you edit like any spreadsheet — no dashboard to learn. When a question isn't covered, it says so honestly, offers a human follow-up, and flags the exact question it couldn't answer, so your documentation grows where customers actually push. The assistant on this page is one.</span></td><td class="pr">$350</td><td>5 days</td></tr>
 
       <tr><td><b>Full stack</b> — all four systems, one coherent build
         <span class="desc">All four builds delivered as one set rather than four separate tools: shared sheet structure, one consistent voice across every message they send, and a single handover session that covers the lot. Works out cheapest per system, and nothing contradicts anything else when a customer touches two of them in the same day.</span></td><td class="pr">$900</td><td>2 weeks</td></tr>
@@ -588,7 +628,7 @@
     <a href="#top">Back to top</a>
   </div>
   Drishti Sen &middot; Automation + Content &middot; Kolkata, India &mdash; working worldwide<br>
-  All screenshots from live production systems, July 2026
+  All screenshots from live production systems, July 2026. The assistant on this page is live, built and run by me in n8n.
 </footer>
 
 <script>
@@ -638,6 +678,96 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+})();
+</script>
+
+
+<!-- ============================ SITE ASSISTANT ============================ -->
+<button class="ask-fab" type="button" id="ask-open" aria-haspopup="dialog" aria-controls="ask-panel"><span class="dot" aria-hidden="true"></span>Ask my assistant</button>
+<div class="ask-panel" id="ask-panel" role="dialog" aria-labelledby="ask-title" hidden>
+  <div class="ask-head">
+    <div>
+      <div class="ask-title" id="ask-title">Ask about my services</div>
+      <p>An AI assistant I built in n8n. It answers only from my own price sheet and passes anything else to me.</p>
+    </div>
+    <button class="ask-close" type="button" id="ask-close" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="ask-log" id="ask-log" aria-live="polite"></div>
+  <form class="ask-form" id="ask-form">
+    <label for="ask-input" class="sr-only">Your message</label>
+    <textarea id="ask-input" rows="1" maxlength="800" placeholder="Ask about prices or a project"></textarea>
+    <button type="submit" id="ask-send">Send</button>
+  </form>
+  <div class="ask-foot">Built and run by me &middot; your messages reach my own n8n and Google Sheet</div>
+</div>
+<script>
+/* Site assistant — a small custom client for an n8n chat webhook. No libraries. */
+(function () {
+  var ENDPOINT = 'https://drishtisen16.app.n8n.cloud/webhook/e322b4c5-131a-4aa4-adb9-8220a1be74c3/chat';
+  var panel = document.getElementById('ask-panel'), fab = document.getElementById('ask-open'),
+      log = document.getElementById('ask-log'), form = document.getElementById('ask-form'),
+      input = document.getElementById('ask-input'), send = document.getElementById('ask-send');
+  var sid = null, started = false, busy = false;
+  try { sid = sessionStorage.getItem('ask-sid'); } catch (e) {}
+  if (!sid) {
+    sid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
+    try { sessionStorage.setItem('ask-sid', sid); } catch (e) {}
+  }
+  function add(text, who) {
+    var d = document.createElement('div');
+    d.className = 'ask-msg ' + who;
+    String(text).split(/(https?:\/\/[^\s)]+)/g).forEach(function (p) {
+      if (/^https?:\/\//.test(p)) {
+        var a = document.createElement('a');
+        a.href = p; a.target = '_blank'; a.rel = 'noopener';
+        a.textContent = p.indexOf('/webhook/') > -1 ? 'Open the live demo' : p;
+        d.appendChild(a);
+      } else if (p) d.appendChild(document.createTextNode(p));
+    });
+    log.appendChild(d); log.scrollTop = log.scrollHeight;
+    return d;
+  }
+  function open() {
+    panel.hidden = false; fab.hidden = true;
+    if (!started) {
+      started = true;
+      add("Hi \u2014 I'm the assistant Drishti built. Ask about his services, prices or how a project works. If you want to start something, I'll pass your details straight to him.", 'bot');
+    }
+    setTimeout(function () { input.focus(); }, 30);
+  }
+  function close() { panel.hidden = true; fab.hidden = false; fab.focus(); }
+  fab.addEventListener('click', open);
+  document.getElementById('ask-close').addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) close(); });
+  document.querySelectorAll('[data-ask-open]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); open(); });
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submit(); }
+  });
+  input.addEventListener('input', function () {
+    input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 110) + 'px';
+  });
+  form.addEventListener('submit', function (e) { e.preventDefault(); submit(); });
+  function submit() {
+    var msg = input.value.trim();
+    if (!msg || busy) return;
+    busy = true; send.disabled = true;
+    add(msg, 'me'); input.value = ''; input.style.height = 'auto';
+    var t = document.createElement('div'); t.className = 'ask-typing'; t.textContent = 'Thinking\u2026';
+    log.appendChild(t); log.scrollTop = log.scrollHeight;
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 30000);
+    fetch(ENDPOINT, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'sendMessage', sessionId: sid, chatInput: msg }),
+      signal: ctrl ? ctrl.signal : undefined
+    })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) { t.remove(); add((j && (j.output || j.text)) || "Sorry, I didn't catch that. Could you ask again?", 'bot'); })
+      .catch(function () { t.remove(); add("I couldn't reach the assistant just now. Email drishtisen16@gmail.com and Drishti will reply within hours.", 'bot'); })
+      .then(function () { clearTimeout(timer); busy = false; send.disabled = false; input.focus(); });
+  }
 })();
 </script>
 

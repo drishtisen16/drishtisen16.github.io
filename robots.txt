@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://REPLACE-WITH-YOUR-URL/sitemap.xml
+Sitemap: https://drishtisen16.github.io/sitemap.xml

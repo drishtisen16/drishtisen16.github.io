@@ -169,14 +169,10 @@
   th{background:var(--ink);color:#e9ebed;text-align:left;padding:13px 18px;font-weight:600;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase}
   td{padding:14px 18px;border-top:1px solid var(--line);color:#2c3238}
   td.pr{white-space:nowrap;font-weight:700;color:var(--accent);vertical-align:top}
-  /* currency: USD by default; html.inr swaps to rupee prices (India time zone or the switch) */
+  /* currency: USD by default; a browser on India time sees only rupee prices, everyone else only dollars */
   .p-inr{display:none}
   html.inr .p-inr{display:inline}
   html.inr .p-usd{display:none}
-  .curswitch{display:flex;align-items:center;gap:8px;margin:-18px 0 22px;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:13.5px;color:var(--grey)}
-  .curswitch button{font:inherit;font-weight:600;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
-  .curswitch button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-  .curswitch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
   td{vertical-align:top}
   td .desc{display:block;font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;line-height:1.6;
@@ -315,8 +311,8 @@
   @media (prefers-reduced-motion:reduce){.ask-fab .dot{animation:none}}
 </style>
 <script>
-/* Currency: a saved choice wins; otherwise a browser set to India time sees rupees. No tracking, no network call. */
-(function(){var c='USD';try{var s=localStorage.getItem('ds-cur');if(s==='INR'||s==='USD'){c=s;}else{var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'');if(tz==='Asia/Kolkata'||tz==='Asia/Calcutta'){c='INR';}}}catch(e){try{var tz2=(Intl.DateTimeFormat().resolvedOptions().timeZone||'');if(tz2==='Asia/Kolkata'||tz2==='Asia/Calcutta'){c='INR';}}catch(e2){}}window.__cur=c;if(c==='INR'){document.documentElement.classList.add('inr');}})();
+/* Currency is set by location only: a browser on India time sees rupee prices, everyone else sees dollar prices. No switch, no tracking, no network call. */
+(function(){var c='USD';try{var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'');if(tz==='Asia/Kolkata'||tz==='Asia/Calcutta'){c='INR';}}catch(e){}window.__cur=c;if(c==='INR'){document.documentElement.classList.add('inr');}try{localStorage.removeItem('ds-cur');}catch(e){}})();
 </script>
 </head>
 <body>
@@ -555,7 +551,7 @@
       <div class="reveal d3"><b>One week of free fixes.</b> If something breaks in week one, it's mine to fix.</div>
     </div>
     <div class="why reveal">
-      <p><b>Why me and not a $29/month tool?</b> The tools automate volume, but they sound like machines — and your customers can tell. I'm a ghostwriter who builds automation: the workflows run themselves, and the words still sound like you. That combination is the whole point.</p>
+      <p><b>Why me and not a cheap monthly tool?</b> The tools automate volume, but they sound like machines — and your customers can tell. I'm a ghostwriter who builds automation: the workflows run themselves, and the words still sound like you. That combination is the whole point.</p>
     </div>
   </div>
 </section>
@@ -565,12 +561,7 @@
   <div class="wrap">
     <div class="sec-label reveal">Pricing</div>
     <h2 class="reveal">Flat, scoped, no surprises</h2>
-    <p class="lede reveal"><span class="p-usd">Prices in US dollars for clients outside India.</span><span class="p-inr">Rupee prices for India-based businesses &mdash; the advance can be paid by UPI or bank transfer.</span> Custom workflows quoted after a free 20-minute call.</p>
-    <div class="curswitch reveal" role="group" aria-label="Show prices in">
-      <span>Show prices in</span>
-      <button type="button" data-cur="USD" aria-pressed="true">$ USD</button>
-      <button type="button" data-cur="INR" aria-pressed="false">&#8377; INR</button>
-    </div>
+    <p class="lede reveal"><span class="p-inr">The advance can be paid by UPI or bank transfer. </span>Custom workflows quoted after a free 20-minute call.</p>
     <table class="reveal">
       <tr><th>Offer</th><th>Price</th><th>Delivery</th></tr>
       <tr><td><b>Any single automation</b> (lead capture, AI assistant, or similar)
@@ -789,14 +780,5 @@
 })();
 </script>
 
-<script>
-(function(){
-  var btns = document.querySelectorAll('.curswitch button');
-  function sync(){ for (var i = 0; i < btns.length; i++) { btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-cur') === window.__cur ? 'true' : 'false'); } }
-  function set(c){ window.__cur = c; document.documentElement.classList.toggle('inr', c === 'INR'); try { localStorage.setItem('ds-cur', c); } catch (e) {} sync(); }
-  for (var i = 0; i < btns.length; i++) { btns[i].addEventListener('click', function(){ set(this.getAttribute('data-cur')); }); }
-  sync();
-})();
-</script>
 </body>
 </html>

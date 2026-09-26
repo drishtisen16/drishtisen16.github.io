@@ -169,6 +169,15 @@
   th{background:var(--ink);color:#e9ebed;text-align:left;padding:13px 18px;font-weight:600;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase}
   td{padding:14px 18px;border-top:1px solid var(--line);color:#2c3238}
   td.pr{white-space:nowrap;font-weight:700;color:var(--accent);vertical-align:top}
+  /* currency: USD by default; html.inr swaps to rupee prices (India time zone or the switch) */
+  .p-inr{display:none}
+  html.inr .p-inr{display:inline}
+  html.inr .p-usd{display:none}
+  .curswitch{display:flex;align-items:center;gap:8px;margin:-18px 0 22px;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:13.5px;color:var(--grey)}
+  .curswitch button{font:inherit;font-weight:600;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;min-height:36px}
+  .curswitch button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .curswitch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
   td{vertical-align:top}
   td .desc{display:block;font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;line-height:1.6;
            color:var(--grey);font-weight:400;margin-top:7px;max-width:62ch}
@@ -305,6 +314,10 @@
   }
   @media (prefers-reduced-motion:reduce){.ask-fab .dot{animation:none}}
 </style>
+<script>
+/* Currency: a saved choice wins; otherwise a browser set to India time sees rupees. No tracking, no network call. */
+(function(){var c='USD';try{var s=localStorage.getItem('ds-cur');if(s==='INR'||s==='USD'){c=s;}else{var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'');if(tz==='Asia/Kolkata'||tz==='Asia/Calcutta'){c='INR';}}}catch(e){try{var tz2=(Intl.DateTimeFormat().resolvedOptions().timeZone||'');if(tz2==='Asia/Kolkata'||tz2==='Asia/Calcutta'){c='INR';}}catch(e2){}}window.__cur=c;if(c==='INR'){document.documentElement.classList.add('inr');}})();
+</script>
 </head>
 <body>
 
@@ -552,29 +565,34 @@
   <div class="wrap">
     <div class="sec-label reveal">Pricing</div>
     <h2 class="reveal">Flat, scoped, no surprises</h2>
-    <p class="lede reveal">INR pricing available for India-based businesses. Custom workflows quoted after a free 20-minute call.</p>
+    <p class="lede reveal"><span class="p-usd">Prices in US dollars for clients outside India.</span><span class="p-inr">Rupee prices for India-based businesses &mdash; the advance can be paid by UPI or bank transfer.</span> Custom workflows quoted after a free 20-minute call.</p>
+    <div class="curswitch reveal" role="group" aria-label="Show prices in">
+      <span>Show prices in</span>
+      <button type="button" data-cur="USD" aria-pressed="true">$ USD</button>
+      <button type="button" data-cur="INR" aria-pressed="false">&#8377; INR</button>
+    </div>
     <table class="reveal">
       <tr><th>Offer</th><th>Price</th><th>Delivery</th></tr>
       <tr><td><b>Any single automation</b> (lead capture, AI assistant, or similar)
-        <span class="desc">Pick the one workflow that's costing you most — a form nobody's watching, an inbox that's always behind, a report you rebuild by hand every week. I build it end to end on your own n8n and Google accounts, you watch a real run succeed before handover, and you get plain-language documentation.</span></td><td class="pr">$300</td><td>5 days</td></tr>
+        <span class="desc">Pick the one workflow that's costing you most — a form nobody's watching, an inbox that's always behind, a report you rebuild by hand every week. I build it end to end on your own n8n and Google accounts, you watch a real run succeed before handover, and you get plain-language documentation.</span></td><td class="pr"><span class="p-usd">$300</span><span class="p-inr">&#8377;15,000</span></td><td>5 days</td></tr>
 
       <tr><td><b>Never Lose a Lead stack</b> — capture + AI assistant
-        <span class="desc">The two systems that stop enquiries going cold, built to work together. Every form submission is logged to your sheet, you get notified, and the lead receives a personal reply in seconds. Incoming messages are classified first: routine ones answered instantly in your tone, anything sensitive escalated to you with a ready-to-edit draft rather than auto-sent.</span></td><td class="pr">$500</td><td>7 days</td></tr>
+        <span class="desc">The two systems that stop enquiries going cold, built to work together. Every form submission is logged to your sheet, you get notified, and the lead receives a personal reply in seconds. Incoming messages are classified first: routine ones answered instantly in your tone, anything sensitive escalated to you with a ready-to-edit draft rather than auto-sent.</span></td><td class="pr"><span class="p-usd">$500</span><span class="p-inr">&#8377;25,000</span></td><td>7 days</td></tr>
 
       <tr><td><b>Voice-Matched Content Engine</b> + your written voice profile
-        <span class="desc">Send one blog post, podcast transcript or voice note. You get 3 LinkedIn posts, a newsletter section and 5 short posts — written against a voice profile I build from your own real writing, so they don't read like everyone else's AI. Everything arrives as an email digest and fills a content calendar marked Draft for review. Nothing publishes until you approve it.</span></td><td class="pr">$400 <span style="color:var(--grey);font-weight:400">(+$150/mo optional human edit)</span></td><td>7 days</td></tr>
+        <span class="desc">Send one blog post, podcast transcript or voice note. You get 3 LinkedIn posts, a newsletter section and 5 short posts — written against a voice profile I build from your own real writing, so they don't read like everyone else's AI. Everything arrives as an email digest and fills a content calendar marked Draft for review. Nothing publishes until you approve it.</span></td><td class="pr"><span class="p-usd">$400 <span style="color:var(--grey);font-weight:400">(+$150/mo optional human edit)</span></span><span class="p-inr">&#8377;20,000 <span style="color:var(--grey);font-weight:400">(+&#8377;7,000/mo optional human edit)</span></span></td><td>7 days</td></tr>
 
       <tr><td><b>Chat assistant</b> — website or Telegram, knowledge base + gap alerts
-        <span class="desc">An assistant that answers customers only from your own facts — on your website, or on Telegram. Your knowledge base lives in a plain Google Sheet you edit like any spreadsheet — no dashboard to learn. When a question isn't covered, it says so honestly, offers a human follow-up, and flags the exact question it couldn't answer, so your documentation grows where customers actually push. The assistant on this page is one.</span></td><td class="pr">$350</td><td>5 days</td></tr>
+        <span class="desc">An assistant that answers customers only from your own facts — on your website, or on Telegram. Your knowledge base lives in a plain Google Sheet you edit like any spreadsheet — no dashboard to learn. When a question isn't covered, it says so honestly, offers a human follow-up, and flags the exact question it couldn't answer, so your documentation grows where customers actually push. The assistant on this page is one.</span></td><td class="pr"><span class="p-usd">$350</span><span class="p-inr">&#8377;18,000</span></td><td>5 days</td></tr>
 
       <tr><td><b>Full stack</b> — all four systems, one coherent build
-        <span class="desc">All four builds delivered as one set rather than four separate tools: shared sheet structure, one consistent voice across every message they send, and a single handover session that covers the lot. Works out cheapest per system, and nothing contradicts anything else when a customer touches two of them in the same day.</span></td><td class="pr">$900</td><td>2 weeks</td></tr>
+        <span class="desc">All four builds delivered as one set rather than four separate tools: shared sheet structure, one consistent voice across every message they send, and a single handover session that covers the lot. Works out cheapest per system, and nothing contradicts anything else when a customer touches two of them in the same day.</span></td><td class="pr"><span class="p-usd">$900</span><span class="p-inr">&#8377;45,000</span></td><td>2 weeks</td></tr>
 
       <tr><td><b>LinkedIn profile &amp; resume makeover</b> (ATS-safe, before/after samples)
-        <span class="desc">Headline, About and experience rewritten so a recruiter understands what you actually do inside the first two lines — the only part most of them read. Resume kept ATS-safe: clean structure, real keywords from the roles you're targeting, none of the graphics and columns that parsers silently discard. You see before and after side by side.</span></td><td class="pr">$50&ndash;80</td><td>48 hours</td></tr>
+        <span class="desc">Headline, About and experience rewritten so a recruiter understands what you actually do inside the first two lines — the only part most of them read. Resume kept ATS-safe: clean structure, real keywords from the roles you're targeting, none of the graphics and columns that parsers silently discard. You see before and after side by side.</span></td><td class="pr"><span class="p-usd">$50&ndash;80</span><span class="p-inr">&#8377;2,500&ndash;4,000</span></td><td>48 hours</td></tr>
 
       <tr><td><b>LinkedIn content sprint</b> — 8 posts in your voice
-        <span class="desc">Eight posts built from your actual experience, not recycled advice. One 20-minute call to pull the stories out, then drafts in your voice: hook in the first line, one specific story or number, plain language, a question to close. You approve every post before anything goes out, and you keep the drafts whether you publish them or not.</span></td><td class="pr">$150&ndash;200</td><td>2 weeks</td></tr>
+        <span class="desc">Eight posts built from your actual experience, not recycled advice. One 20-minute call to pull the stories out, then drafts in your voice: hook in the first line, one specific story or number, plain language, a question to close. You approve every post before anything goes out, and you keep the drafts whether you publish them or not.</span></td><td class="pr"><span class="p-usd">$150&ndash;200</span><span class="p-inr">&#8377;7,000&ndash;10,000</span></td><td>2 weeks</td></tr>
     </table>
   </div>
 </section>
@@ -760,7 +778,7 @@
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 30000);
     fetch(ENDPOINT, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'sendMessage', sessionId: sid, chatInput: msg }),
+      body: JSON.stringify({ action: 'sendMessage', sessionId: sid, chatInput: msg, currency: window.__cur || 'USD' }),
       signal: ctrl ? ctrl.signal : undefined
     })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -771,5 +789,14 @@
 })();
 </script>
 
+<script>
+(function(){
+  var btns = document.querySelectorAll('.curswitch button');
+  function sync(){ for (var i = 0; i < btns.length; i++) { btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-cur') === window.__cur ? 'true' : 'false'); } }
+  function set(c){ window.__cur = c; document.documentElement.classList.toggle('inr', c === 'INR'); try { localStorage.setItem('ds-cur', c); } catch (e) {} sync(); }
+  for (var i = 0; i < btns.length; i++) { btns[i].addEventListener('click', function(){ set(this.getAttribute('data-cur')); }); }
+  sync();
+})();
+</script>
 </body>
 </html>

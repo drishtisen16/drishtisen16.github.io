@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio — Drishti Sen</title>
+<meta name="description" content="Drishti Sen: customer support, trust & safety, AI automation (n8n) and writing — remote, for teams that work in US hours. Case studies with run logs, work samples and published writing.">
+<link rel="canonical" href="https://drishtisen16.github.io/portfolio.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Drishti Sen — Portfolio">
+<meta property="og:description" content="Customer support, trust & safety, AI automation and writing — for teams that work in US hours.">
+<meta property="og:url" content="https://drishtisen16.github.io/portfolio.html">
+<meta property="og:image" content="https://drishtisen16.github.io/pf-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--ink:#14181A;--body:#2B3136;--muted:#59616A;--line:#D5DADD;--chip:#C9D0D4;--accent:#0B5563;--accent-dk:#073A44;--plate:#0F1415;--tint:#F7F9F9;--bg:#FFFFFF;
+--sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}a:hover{color:var(--accent-dk)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:12px;background:#fff;padding:8px 12px;z-index:20}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap}
+.brand{font-weight:700;letter-spacing:-.02em;text-decoration:none;color:var(--ink);font-size:17px}
+.bar nav{display:flex;gap:18px;flex-wrap:wrap}
+.bar nav a{font-size:14px;color:var(--body);text-decoration:none}.bar nav a:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.btn:hover{background:var(--accent-dk);color:#fff}
+.btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+.btn.ghost:hover{background:var(--accent);color:#fff}
+
+/* hero */
+.hero{padding:88px 0 56px}
+.rule{width:56px;height:6px;background:var(--accent);margin-bottom:22px}
+h1{margin:0;font-size:clamp(48px,9vw,80px);line-height:.95;letter-spacing:-.045em;font-weight:700}
+.lede{margin:22px 0 0;font-size:clamp(20px,3vw,26px);line-height:1.3;font-weight:500;letter-spacing:-.015em;color:var(--body);max-width:640px;text-wrap:balance}
+.hero .mono{margin-top:18px;line-height:1.7}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);margin-top:56px}
+.proof>div{padding:16px 16px 0;border-left:1px solid var(--line)}
+.proof>div:first-child{padding-left:0;border-left:0}
+.proof b{display:block;font-size:34px;line-height:1;letter-spacing:-.03em;color:var(--accent);margin-bottom:8px}
+.proof span{font-family:var(--mono);font-size:11px;letter-spacing:.04em;line-height:1.5;color:var(--muted);text-transform:uppercase}
+
+/* contents + verify */
+.block{padding:56px 0;border-top:1px solid var(--line)}
+h2{margin:0;font-size:clamp(30px,5vw,40px);line-height:1.05;letter-spacing:-.03em;font-weight:700}
+h3{margin:0;font-size:20px;letter-spacing:-.01em;font-weight:700}
+.toc{list-style:none;margin:20px 0 0;padding:0;border-top:2px solid var(--ink)}
+.toc li a{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);align-items:baseline}
+.toc li a:hover b{color:var(--accent)}
+.toc .n{font-size:24px;font-weight:700;letter-spacing:-.03em;color:var(--accent)}
+.toc b{font-size:19px;font-weight:600}
+.toc small{display:block;font-size:14px;color:var(--muted)}
+.rows{display:grid;grid-template-columns:140px minmax(0,1fr);margin-top:16px}
+.rows>*{padding:11px 0;border-top:1px solid var(--line)}
+.rows>.mono{padding-top:14px}
+.rows>:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+.rows p{margin:0;font-size:15px;color:var(--body)}
+
+/* section openers */
+.opener{padding:88px 0 8px;border-top:2px solid var(--ink)}
+.num{font-size:clamp(88px,14vw,128px);line-height:.8;font-weight:700;letter-spacing:-.07em;color:var(--accent)}
+.opener h2{margin-top:22px;font-size:clamp(34px,6vw,48px)}
+.opener .thesis{margin:16px 0 0;font-size:20px;line-height:1.45;color:var(--body);max-width:620px;text-wrap:balance}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);margin-top:32px}
+.facts>div{padding:14px 16px;border-left:1px solid var(--line)}
+.facts>div:first-child{padding-left:0;border-left:0}
+.facts b{display:block;font-size:28px;letter-spacing:-.03em;margin-bottom:4px}
+
+/* case studies */
+.case{padding:56px 0 8px}
+.case .mono.eyebrow{color:var(--accent)}
+.case h3{font-size:clamp(24px,4vw,30px);letter-spacing:-.03em;margin:6px 0 18px}
+.diagram{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;display:flex;flex-direction:column;gap:12px}
+.flow{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chip{padding:6px 9px;border:1px solid var(--chip);border-radius:4px;font-size:13px;line-height:1.3;background:#fff}
+.chip.g{border:1.5px solid var(--accent);color:var(--accent);font-weight:600}
+.chip.ai{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.arr{color:#9AA3A9;font-size:13px}
+.prr{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.prr p{margin:0;font-size:15px;color:var(--body)}
+figure{margin:18px 0 0}
+.plate{background:var(--plate);padding:12px;border-radius:8px}
+.plate img{border-radius:4px;width:100%}
+figcaption{margin-top:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;line-height:1.6;color:var(--muted);text-transform:uppercase}
+.also{border-top:2px solid var(--ink);margin-top:14px}
+.also>div{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);align-items:baseline;font-size:15px}
+.also>div>span:last-child{text-align:right}
+
+/* runbook table */
+.rb{margin-top:16px}
+.rb .h,.rb .r{display:grid;grid-template-columns:180px minmax(0,1fr) 160px;column-gap:18px}
+.rb .h{padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.rb .r{padding:12px 0;border-bottom:1px solid var(--line);align-items:start}
+.rb .r b{font-size:15px;font-weight:600}.rb .r span{font-size:15px;color:var(--body)}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:14px}
+.three>div{border-top:3px solid var(--accent);padding-top:10px}
+.three b{display:block;font-size:15px;margin-bottom:4px}.three p{margin:0;font-size:14px;color:var(--muted)}
+
+/* role facts */
+.dl{display:grid;grid-template-columns:140px minmax(0,1fr);margin-top:28px}
+.dl>*{padding:11px 0;border-top:1px solid var(--line)}
+.dl>:nth-child(-n+2){border-top:2px solid var(--ink)}
+.dl>:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+.dl>.mono{padding-top:14px}
+.dl span:not(.mono){font-size:15px}
+.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:28px}
+.list{border-top:2px solid var(--ink)}
+.list .hd{padding:10px 0;border-bottom:1px solid var(--line)}
+.list .hd b{display:block;font-size:17px}
+.list p{margin:0;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+
+/* samples */
+.samples{padding:48px 0 8px}
+.samples .label{margin:6px 0 16px;line-height:1.6}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.doc{border:1px solid var(--chip);border-radius:6px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.doc.dark{border-color:var(--ink);background:var(--tint)}
+.doc.pick{border:1.5px solid var(--accent)}
+.doc .mono{color:var(--accent)}
+.doc p{margin:0;font-size:15px;color:var(--body)}
+.doc .why{margin-top:auto;padding-top:8px;border-top:1px solid #E3E7E9;font-size:13px;color:var(--muted)}
+.kv{display:grid;grid-template-columns:96px minmax(0,1fr);gap:6px 12px;font-size:14px}
+.memo{border:1px solid var(--chip);border-radius:6px;padding:16px 20px;margin-bottom:16px}
+.memo .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;padding-bottom:8px}
+.memo .top b{font-size:17px}.memo .top .mono{color:var(--accent)}
+.memo .kv{grid-template-columns:110px minmax(0,1fr);gap:0 16px}
+.memo .kv>*{padding:8px 0;border-top:1px solid #E3E7E9}
+.memo .kv>.mono{padding-top:11px}
+.score .h,.score .r{display:grid;grid-template-columns:160px 56px 56px minmax(0,1fr);column-gap:14px}
+.score .h{padding-bottom:8px;border-bottom:2px solid var(--ink);margin-top:20px}
+.score .r{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;align-items:baseline}
+.score .c{text-align:right}.score .w{text-align:right;font-weight:700;color:var(--accent)}
+
+/* writing */
+.teardown{display:grid;grid-template-columns:320px minmax(0,1fr);gap:28px;margin-top:18px;align-items:start}
+.frame{border:1px solid var(--chip);border-radius:6px;padding:5px}
+.steps{display:flex;flex-direction:column;gap:18px}
+.steps>div{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px}
+.steps .k{font-size:24px;font-weight:700;color:var(--accent);line-height:1}
+.steps b{display:block;font-size:16px;margin-bottom:4px}.steps p{margin:0;font-size:15px;color:var(--body)}
+.car figcaption{text-transform:none;font-family:var(--sans);font-size:15px;letter-spacing:0;color:var(--ink)}
+.car figcaption .mono{display:block;margin-top:2px}
+
+/* profile */
+.tl{border-top:2px solid var(--ink);margin-top:16px}
+.tl>div{display:grid;grid-template-columns:190px minmax(0,1fr);gap:16px;padding:11px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 24px;margin-top:14px}
+.skills .mono{color:var(--accent);display:block;margin-bottom:4px}
+.skills p{margin:0;font-size:14px}
+
+/* contact + footer */
+.contact{padding:72px 0 64px;border-top:2px solid var(--ink)}
+.contact p.big{font-size:clamp(24px,4vw,32px);line-height:1.25;font-weight:600;letter-spacing:-.02em;margin:0 0 24px;max-width:680px}
+.contact .links{display:flex;flex-wrap:wrap;gap:12px}
+footer{border-top:1px solid var(--line);padding:18px 0 28px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:720px){
+  .bar nav{display:none}
+  .proof{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proof>div{padding:14px 12px 14px 0;border-left:0}
+  .proof>div:nth-child(even){padding-left:12px;border-left:1px solid var(--line)}
+  .proof>div:nth-child(n+3){border-top:1px solid var(--line)}
+  .facts{grid-template-columns:1fr}.facts>div{padding:12px 0;border-left:0;border-top:1px solid var(--line)}.facts>div:first-child{border-top:0}
+  .flow,.prr,.rows,.dl{grid-template-columns:1fr}
+  .flow{gap:6px}.prr{gap:4px}
+  .rows>.mono,.dl>.mono{padding-bottom:0;border-bottom:0}
+  .rows>:not(.mono),.dl>:not(.mono){border-top:0;padding-top:4px}
+  .rb .h{display:none}.rb .r{grid-template-columns:1fr;row-gap:4px}
+  .three,.cols2,.grid2,.skills{grid-template-columns:1fr}
+  .also>div{grid-template-columns:1fr}.also>div>span:last-child{text-align:left}
+  .teardown{grid-template-columns:1fr}
+  .tl>div{grid-template-columns:1fr;gap:2px}
+  .score .h,.score .r{grid-template-columns:110px 40px 40px minmax(0,1fr);column-gap:8px}
+  .memo .kv{grid-template-columns:1fr}.memo .kv>.mono{border-top:1px solid #E3E7E9}.memo .kv>:not(.mono){border-top:0;padding-top:2px}
+}
+@media print{.bar,.cta,footer{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="https://drishtisen16.github.io/">Drishti Sen</a>
+    <nav aria-label="Portfolio sections">
+      <a href="#automation">Automation</a>
+      <a href="#support">Support</a>
+      <a href="#safety">Trust &amp; safety</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="Drishti-Sen-Portfolio.pdf" download>Download PDF</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="mono">Portfolio · Last updated October 2026</div>
+    <div class="rule" style="margin-top:40px"></div>
+    <h1>Drishti Sen</h1>
+    <p class="lede">Customer support, trust &amp; safety, AI automation and writing — for teams that work in US hours.</p>
+    <p class="mono">Kolkata, India (IST) · Remote · Full-time or part-time · 2–11 PM IST · Available now</p>
+    <div class="cta">
+      <a class="btn" href="#automation">See the work</a>
+      <a class="btn ghost" href="Drishti-Sen-Portfolio.pdf" download>Download PDF</a>
+    </div>
+    <div class="proof">
+      <div><b>97%</b><span>Positive response rate · Amazon support</span></div>
+      <div><b>2–3k</b><span>User reports reviewed a week · WEJOY</span></div>
+      <div><b>5</b><span>Client automation systems live · n8n</span></div>
+      <div><b>20</b><span>Workflows running my own business</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="contents-h">
+  <div class="wrap">
+    <h2 id="contents-h">Contents</h2>
+    <ul class="toc">
+      <li><a href="#automation"><span class="n">01</span><span><b>AI automation</b><small>Three case studies with run logs, and what happens when things break</small></span></a></li>
+      <li><a href="#support"><span class="n">02</span><span><b>Customer support</b><small>Amazon, plus sample replies and an escalation note</small></span></a></li>
+      <li><a href="#safety"><span class="n">03</span><span><b>Trust &amp; safety and AI evaluation</b><small>WEJOY, two decision memos, and a scored model comparison</small></span></a></li>
+      <li><a href="#writing"><span class="n">04</span><span><b>Writing</b><small>A rewrite teardown, published carousels, and my process</small></span></a></li>
+    </ul>
+
+    <h3 style="margin-top:48px">How to verify this portfolio</h3>
+    <p style="margin:6px 0 0;color:var(--muted);font-size:15px">I have no client testimonials to show yet, so everything here is built to be checked.</p>
+    <div class="rows">
+      <span class="mono">Run logs</span><p>Every run number and timing is copied from n8n's execution history. I'll screen-share any of them live.</p>
+      <span class="mono">Live demo</span><p>An AI front-desk chat you can try on <a href="https://drishtisen16.github.io/#demo">my website</a>.</p>
+      <span class="mono">Writing</span><p>Posts and carousels are live on <a href="https://www.linkedin.com/in/drishtisen">linkedin.com/in/drishtisen</a>.</p>
+      <span class="mono">Samples</span><p>Anything marked SAMPLE was written for this portfolio. No client names, customer data, user reports or internal employer tools appear anywhere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 AUTOMATION ============ -->
+<section id="automation" class="opener">
+  <div class="wrap">
+    <div class="num">01</div>
+    <h2>AI automation</h2>
+    <p class="thesis">I build n8n systems that do the routine work and stop themselves before they do damage.</p>
+    <div class="facts">
+      <div><b>5</b><span class="mono">Client systems live on clients' own accounts</span></div>
+      <div><b>20</b><span class="mono">Workflows running my own business</span></div>
+      <div><b>1 wk</b><span class="mono">Of support and docs with every handover</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="case" aria-labelledby="case-a">
+  <div class="wrap">
+    <span class="mono eyebrow">Case A · Own business · In production</span>
+    <h3 id="case-a">Cold email with brakes</h3>
+    <div class="diagram">
+      <div class="flow"><span class="mono">Sender · daily</span><div class="chips">
+        <span class="chip">Read settings</span><span class="arr">→</span><span class="chip g">Off-switch on?</span><span class="arr">→</span><span class="chip g">Skip opt-outs</span><span class="arr">→</span><span class="chip">Send, paced</span><span class="arr">→</span><span class="chip">Mark SENT / SKIPPED</span><span class="arr">→</span><span class="chip">Summary to owner</span>
+      </div></div>
+      <div class="flow"><span class="mono">Watcher · every 30 min</span><div class="chips">
+        <span class="chip">Read new mail</span><span class="arr">→</span><span class="chip">Classify</span><span class="arr">→</span><span class="chip">Reply → update queue, alert</span><span class="chip g">Opt-out → suppression list</span><span class="chip g">Warning → switch sender off</span>
+      </div></div>
+      <span class="mono">Teal outline = guardrail</span>
+    </div>
+    <div class="prr"><span class="mono">Problem</span><p>Cold email from a business mailbox can go wrong fast — a bad batch, a reply nobody sees, an opt-out that gets emailed again.</p></div>
+    <div class="prr"><span class="mono">Result</span><p>No one on the opt-out list can be emailed, every reply is seen within half an hour, and the system can pause its own sending without me in the loop.</p></div>
+    <figure>
+      <a class="plate" href="pf-approved-sender.jpg" style="display:block"><img src="pf-approved-sender.jpg" width="1338" height="360" loading="lazy" alt="n8n execution of Approved Sender, run 6489, 28 October 2026, succeeded in 11.646 seconds, with four numbered callouts"></a>
+      <figcaption>Sender · run #6489 · 28 Oct 2026 · 11.646 s — 1 off-switch check · 2 suppression list · 3 wait between sends · 4 status written back</figcaption>
+    </figure>
+    <figure>
+      <a class="plate" href="pf-inbox-watcher.jpg" style="display:block"><img src="pf-inbox-watcher.jpg" width="1370" height="593" loading="lazy" alt="n8n execution of Sender Inbox Watcher, run 6557, 28 October 2026, succeeded in 10.234 seconds, with five numbered callouts"></a>
+      <figcaption>Watcher · run #6557 · 28 Oct 2026 · 10.234 s — 1 every 30 minutes · 2 classify · 3 route · 4 opt-out → suppression · 5 sender off + alert</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="case" aria-labelledby="case-b">
+  <div class="wrap">
+    <span class="mono eyebrow">Case B · Own business · In production</span>
+    <h3 id="case-b">A lead pipeline that drafts, never sends</h3>
+    <div class="diagram">
+      <div class="flow"><span class="mono">Call list · daily 7:00 IST</span><div class="chips">
+        <span class="chip">Apify Google Maps run</span><span class="arr">→</span><span class="chip">Wait, check status</span><span class="arr">→</span><span class="chip">Pull results</span><span class="arr">→</span><span class="chip g">Only new numbers</span><span class="arr">→</span><span class="chip">Append to call list</span>
+      </div></div>
+      <div class="flow"><span class="mono">Outreach · daily 7:00 IST</span><div class="chips">
+        <span class="chip">Read 3 lead sources</span><span class="arr">→</span><span class="chip ai">Gemini drafts</span><span class="arr">→</span><span class="chip g">Gmail draft, not sent</span><span class="arr">→</span><span class="chip">Update lead status</span><span class="arr">→</span><span class="chip">Daily digest</span>
+      </div></div>
+      <span class="mono">Filled = AI step · Teal outline = guardrail</span>
+    </div>
+    <div class="prr"><span class="mono">Problem</span><p>Finding local businesses and writing to each one by hand eats the morning. Letting AI write and send on its own risks a bad first impression with every lead.</p></div>
+    <div class="prr"><span class="mono">Result</span><p>New numbers and first drafts are waiting each morning. Nothing reaches a prospect until I've read it. Both workflows run under one orchestrator workflow.</p></div>
+    <figure>
+      <a class="plate" href="pf-outreach-engine.jpg" style="display:block"><img src="pf-outreach-engine.jpg" width="1323" height="387" loading="lazy" alt="n8n execution of Outreach Engine, run 6147, 24 October 2026, succeeded in 12.598 seconds, with four numbered callouts"></a>
+      <figcaption>Outreach · run #6147 · 24 Oct 2026 · 12.598 s — 1 read leads · 2 Gemini draft · 3 Gmail draft · 4 digest</figcaption>
+    </figure>
+    <figure>
+      <a class="plate" href="pf-call-list.jpg" style="display:block"><img src="pf-call-list.jpg" width="1313" height="240" loading="lazy" alt="n8n execution of Call List Refill, run 6148, 24 October 2026, succeeded in 4.391 seconds"></a>
+      <figcaption>Call list · run #6148 · 24 Oct 2026 · 4.391 s</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="case" aria-labelledby="case-c">
+  <div class="wrap">
+    <span class="mono eyebrow">Case C · Own business · In production</span>
+    <h3 id="case-c">Client onboarding in one pass</h3>
+    <div class="diagram">
+      <div class="flow"><span class="mono">Every run</span><div class="chips">
+        <span class="chip">Called by orchestrator</span><span class="arr">→</span><span class="chip">Read prospects, leads, clients</span><span class="arr">→</span><span class="chip" style="font-weight:600">Plan: split into four lanes</span>
+      </div></div>
+      <div class="flow"><span class="mono">① New clients</span><div class="chips">
+        <span class="chip">Add client row</span><span class="arr">→</span><span class="chip ai">Gemini onboarding pack</span><span class="arr">→</span><span class="chip g">Welcome email as draft</span><span class="chip">Onboarding email</span>
+      </div></div>
+      <div class="flow"><span class="mono">② ③ ④</span><div class="chips">
+        <span class="chip">Updates → client row</span><span class="chip">Reminders → nudge email</span><span class="chip ai">Testimonials → Gemini request</span>
+      </div></div>
+      <span class="mono">Filled = AI step · Teal outline = guardrail</span>
+    </div>
+    <div class="prr"><span class="mono">Problem</span><p>After a client says yes, small jobs pile up: a welcome pack, onboarding emails, chasing what's pending, asking for a testimonial. Each one is easy to forget.</p></div>
+    <div class="prr"><span class="mono">Result</span><p>Every run checks every client and does only what each one needs. It ran every two hours on 22 Oct 2026, and is now triggered by the same orchestrator as the lead pipeline.</p></div>
+    <figure>
+      <a class="plate" href="pf-client-onboarding.jpg" style="display:block"><img src="pf-client-onboarding.jpg" width="1343" height="675" loading="lazy" alt="n8n execution of Client Onboarding, run 6064, 22 October 2026, succeeded in 1.947 seconds, with four numbered callouts"></a>
+      <figcaption>Onboarding · run #6064 · 22 Oct 2026 · 1.947 s — 1 plan into lanes · 2 Gemini pack · 3 welcome draft · 4 reminder email</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="case" aria-labelledby="runbook">
+  <div class="wrap">
+    <span class="mono eyebrow">Runbook · Applies to cases A–C</span>
+    <h3 id="runbook">When it breaks</h3>
+    <p style="margin:0;color:var(--body);font-size:15px;max-width:640px">The happy path is the easy part. This is what each system does when something goes wrong, and where the evidence lands.</p>
+    <div class="rb">
+      <div class="h mono"><span>Failure</span><span>What the system does</span><span>Where it shows</span></div>
+      <div class="r"><b>A warning reply arrives</b><span>The inbox watcher routes it as a brake: switches the sender off in the settings sheet and emails me why. The sender checks that switch before every run.</span><span class="mono">Settings sheet · brake alert</span></div>
+      <div class="r"><b>Someone opts out</b><span>They're added to the suppression list within 30 minutes. Every send run reads that list first and skips anyone on it.</span><span class="mono">Suppression sheet</span></div>
+      <div class="r"><b>A send run stops midway</b><span>Each row is marked SENDING before the email goes and SENT after, so an interrupted row stays visible instead of disappearing. A summary email follows every run.</span><span class="mono">Send queue · run summary</span></div>
+      <div class="r"><b>An API call fails</b><span>Calls to Gemini, Google and other APIs retry on error. The call-list workflow checks the Apify run's status before it pulls any results.</span><span class="mono">n8n execution log</span></div>
+      <div class="r"><b>The AI returns something unusable</b><span>Its output is parsed and checked before use. Anything that doesn't parse goes to a person, never to a customer.</span><span class="mono">Owner alert</span></div>
+      <div class="r"><b>The AI writes something off-tone</b><span>Outreach and welcome emails land as Gmail drafts. A person reads them before anything is sent.</span><span class="mono">Gmail drafts</span></div>
+      <div class="r"><b>A workflow fails quietly</b><span>A separate watchdog workflow flags failed runs, so a silent failure becomes a message.</span><span class="mono">Watchdog alert</span></div>
+    </div>
+    <h3 style="font-size:19px;margin-top:32px">Three rules every build follows</h3>
+    <div class="three">
+      <div><b>Answer only from approved information</b><p>Assistants read from the owner's sheet or knowledge base, and say so when a question isn't covered.</p></div>
+      <div><b>A person before anything sensitive</b><p>Sensitive messages and first-touch emails wait for human approval.</p></div>
+      <div><b>Every run leaves a record</b><p>Execution logs, status columns and summary emails — so problems can be traced.</p></div>
+    </div>
+
+    <h3 style="font-size:19px;margin-top:40px">Also built</h3>
+    <div class="also">
+      <div><span><b>WhatsApp front desk</b> <span style="color:var(--muted)">— answers in English, Hindi or Bengali from the owner's sheet (demo)</span></span><span class="mono">Run #2319 · 2.2 s</span></div>
+      <div><span><b>AI inquiry assistant</b> <span style="color:var(--muted)">— replies to routine messages, drafts the sensitive ones for a person</span></span><span class="mono">Run #8 · 9.756 s</span></div>
+      <div><span><b>Lead capture</b> <span style="color:var(--muted)">— form to sheet, owner alert and confirmation email in one pass</span></span><span class="mono">Run #4 · 3.933 s</span></div>
+      <div><span><b>Voice-matched content engine</b> <span style="color:var(--muted)">— one source into nine drafts, held for approval</span></span><span class="mono">19 Jul 2026 · 18.754 s</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px;line-height:1.7">Stack · n8n · Gemini API · Google Sheets · Gmail API · WhatsApp Cloud API · Apify · Webhooks · REST APIs</p>
+  </div>
+</section>
+
+<!-- ============ 02 SUPPORT ============ -->
+<section id="support" class="opener" style="margin-top:56px">
+  <div class="wrap">
+    <div class="num">02</div>
+    <h2>Customer support</h2>
+    <p class="thesis">The hundredth conversation of the day gets the same care as the first.</p>
+    <div class="facts">
+      <div><b>97%</b><span class="mono">Positive response rate</span></div>
+      <div><b>90–110</b><span class="mono">Customer interactions a day</span></div>
+      <div><b>1 yr 9 mo</b><span class="mono">On Amazon's support team</span></div>
+    </div>
+    <div class="dl">
+      <span class="mono">Role</span><span><b>Virtual Customer Support Associate</b> · Amazon</span>
+      <span class="mono">Dates</span><span>Jul 2022 – Apr 2024</span>
+      <span class="mono">Channels</span><span>Calls and chat</span>
+      <span class="mono">Issues</span><span>Orders, deliveries and accounts — resolved end to end</span>
+      <span class="mono">Accuracy</span><span>Verified order processing and data entry before closing each case</span>
+      <span class="mono">Targets</span><span>Met consistently in a high-volume, process-driven team</span>
+    </div>
+  </div>
+</section>
+
+<section class="samples" aria-labelledby="support-samples">
+  <div class="wrap">
+    <span class="mono" style="color:var(--accent)">Work samples</span>
+    <h3 id="support-samples" style="font-size:clamp(24px,4vw,30px);letter-spacing:-.03em;margin-top:6px">How I write to customers</h3>
+    <p class="mono label">Samples · written for this portfolio · not Amazon material · [brackets] are placeholders</p>
+    <div class="grid2">
+      <div class="doc"><span class="mono">Macro 1 · Refund not showing yet</span><p>Hi [Name], thanks for checking. Your refund for order [#] was issued on [date] — I can see it on our side. Banks usually take [3–5] business days to show it. If it isn't there by [date], reply here and I'll chase it with our payments team myself, so you won't need to explain it again.</p><span class="why">Confirms what's known, gives a date, and owns the next step.</span></div>
+      <div class="doc"><span class="mono">Macro 2 · Locked out of account</span><p>Hi [Name], sorry you're locked out. For your security I can't change account details over chat, but this gets you back in: go to [link], choose “Forgot password” and use the email on the account. If nothing arrives within 10 minutes, check spam, then reply “no email” and I'll take it from there.</p><span class="why">States the limit once, then gives steps and a fallback.</span></div>
+      <div class="doc"><span class="mono">Macro 3 · Upset, second contact</span><p>Hi [Name], you've had to contact us twice about this, and that's on us. Here's what I've done: [action taken]. Here's what happens next: [next step] by [date and time]. I've added a note to your case so whoever you speak to next sees the full history.</p><span class="why">Owns the miss, skips the scripted apology, ends on one concrete step.</span></div>
+      <div class="doc dark"><span class="mono">Internal · Escalation note</span>
+        <div class="kv"><span class="mono" style="color:var(--muted)">Case</span><span>[ID] · Delivered, not received · 2nd contact</span><span class="mono" style="color:var(--muted)">Tried</span><span>Carrier scan checked; address matches order; customer confirmed no neighbour or safe-place delivery</span><span class="mono" style="color:var(--muted)">Need</span><span>Approval for replacement or refund under [policy]</span><span class="mono" style="color:var(--muted)">Told</span><span>Update within 24 hours</span></div>
+        <span class="why">The next person can act without asking the customer anything again.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 SAFETY ============ -->
+<section id="safety" class="opener" style="margin-top:56px">
+  <div class="wrap">
+    <div class="num">03</div>
+    <h2>Trust &amp; safety and AI evaluation</h2>
+    <p class="thesis">Making the same call the same way thousands of times — and knowing which cases need a second opinion.</p>
+    <div class="facts">
+      <div><b>2–3k</b><span class="mono">User reports reviewed a week</span></div>
+      <div><b>21 mo</b><span class="mono">Content moderation at WEJOY</span></div>
+      <div><b>2022</b><span class="mono">Evaluating AI responses since</span></div>
+    </div>
+    <div class="cols2">
+      <div class="list"><div class="hd"><b>Content Moderator</b><span class="mono">WEJOY PTE. LTD. · Sep 2024 – Jun 2026</span></div>
+        <p>Reviewed each user report against written community guidelines and platform safety standards</p>
+        <p>Identified and actioned harmful, misleading and policy-breaching content</p>
+        <p>Escalated edge cases to cross-functional teams for a policy decision, rather than guessing</p></div>
+      <div class="list"><div class="hd"><b>AI Chatbot Trainer</b><span class="mono">Freelance · Jan 2022 – present</span></div>
+        <p>Rate and rank model responses against written quality criteria</p>
+        <p>Write the correction guidance used to refine conversational output</p>
+        <p>Gather, curate and annotate training data — English, Hindi, Bengali</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="samples" aria-labelledby="memos">
+  <div class="wrap">
+    <span class="mono" style="color:var(--accent)">Work samples</span>
+    <h3 id="memos" style="font-size:clamp(24px,4vw,30px);letter-spacing:-.03em;margin-top:6px">Two decision memos</h3>
+    <p class="mono label">Fictional cases · written for this portfolio · not WEJOY material · based on common clauses in public community guidelines</p>
+    <div class="memo"><div class="top"><b>Memo 1 · “It's just banter”</b><span class="mono">Decision · Action</span></div>
+      <div class="kv">
+        <span class="mono">Report</span><span>A user reports repeated insults in a public voice-room chat. The reported user says they're friends and it's banter.</span>
+        <span class="mono">Evidence</span><span>Four messages in ten minutes, all aimed at one person. That person filed the report.</span>
+        <span class="mono">Policy</span><span>Harassment: repeated, targeted insults at an individual.</span>
+        <span class="mono">Decision</span><span><b>Remove the messages and warn the reported user.</b></span>
+        <span class="mono">Reasoning</span><span>Banter needs both sides to treat it as banter. The target reporting it is the clearest signal they don't. Repetition plus a single target meets the clause.</span>
+        <span class="mono">Escalation</span><span>None. Note added to the account so a repeat is easy to spot.</span>
+      </div></div>
+    <div class="memo"><div class="top"><b>Memo 2 · Graphic image, shared as news</b><span class="mono">Decision · Escalate</span></div>
+      <div class="kv">
+        <span class="mono">Report</span><span>A post shares a screenshot of a news report showing an injured person, captioned to raise awareness.</span>
+        <span class="mono">Policy</span><span>Graphic violence is restricted. The guideline I'm working from doesn't define a news or awareness exception.</span>
+        <span class="mono">Decision</span><span><b>Escalate. Limit visibility while it's reviewed, if the platform allows.</b></span>
+        <span class="mono">Reasoning</span><span>Removing it may suppress legitimate news. Leaving it up shows graphic content with no warning. Where the policy is silent, the call belongs to the policy owners — my job is to hand them a clean case.</span>
+        <span class="mono">Escalation</span><span>To the policy team with the post, the clause, both readings, and my recommendation: keep it behind a warning screen.</span>
+      </div></div>
+  </div>
+</section>
+
+<section class="samples" aria-labelledby="eval">
+  <div class="wrap">
+    <span class="mono" style="color:var(--accent)">Work sample</span>
+    <h3 id="eval" style="font-size:clamp(24px,4vw,30px);letter-spacing:-.03em;margin-top:6px">Scoring two model answers</h3>
+    <p class="mono label">Sample · written for this portfolio · not client material · scale 1–5</p>
+    <div class="prr" style="border-top:2px solid var(--ink)"><span class="mono">User prompt</span><p style="font-weight:500;color:var(--ink)">“My package says delivered but it's not here. What do I do?”</p></div>
+    <div class="grid2" style="margin-top:14px">
+      <div class="doc"><span class="mono" style="color:var(--muted)">Response A</span><p>“Sorry to hear that! Packages marked delivered almost always are. Check with your neighbours. If you still can't find it, you'll get a full refund automatically within 24 hours.”</p></div>
+      <div class="doc pick"><span class="mono">Response B · Preferred</span><p>“That's frustrating. A few quick checks: look around your door and mailbox, ask anyone at home, and see if the carrier left a delivery photo. Parcels are sometimes marked delivered a little early. If it hasn't turned up by tomorrow, contact the seller or carrier with your order number — they can open a missing-package claim.”</p></div>
+    </div>
+    <div class="score">
+      <div class="h mono"><span>Criterion</span><span class="c">A</span><span class="c">B</span><span>Note</span></div>
+      <div class="r"><b>Accuracy</b><span class="c">2</span><span class="w">5</span><span>A invents a refund policy it can't know.</span></div>
+      <div class="r"><b>Helpfulness</b><span class="c">2</span><span class="w">5</span><span>B gives ordered steps and a clear next action.</span></div>
+      <div class="r"><b>Tone</b><span class="c">3</span><span class="w">4</span><span>“Almost always are” quietly doubts the user.</span></div>
+      <div class="r"><b>Made-up claims</b><span class="c">Fail</span><span class="w">Pass</span><span>A promises an outcome on the company's behalf.</span></div>
+    </div>
+    <div class="prr" style="border-bottom:0"><span class="mono">Verdict</span><p><b style="color:var(--ink)">B, clearly.</b> A sounds friendlier at first glance, but its refund promise is a hallucinated policy. A customer acting on it would be let down twice. One invented claim outweighs any gain in warmth.</p></div>
+  </div>
+</section>
+
+<!-- ============ 04 WRITING ============ -->
+<section id="writing" class="opener" style="margin-top:56px">
+  <div class="wrap">
+    <div class="num">04</div>
+    <h2>Writing</h2>
+    <p class="thesis">Ghostwriting since July 2022 for coaches, consultants and founders — published under their names, in their voice.</p>
+  </div>
+</section>
+
+<section class="samples" aria-labelledby="teardown">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;padding-bottom:8px;border-bottom:2px solid var(--ink)">
+      <h3 id="teardown" style="font-size:18px">Teardown · one rewrite, three decisions</h3>
+      <span class="mono">My own post · LinkedIn · 2026</span>
+    </div>
+    <div class="teardown">
+      <div class="frame"><img src="pf-post-rewrite.jpg" width="630" height="790" loading="lazy" alt="LinkedIn post by Drishti Sen showing a before-and-after rewrite of a coaching post"></div>
+      <div class="steps">
+        <div><span class="k">1</span><div><b>Cut the borrowed words</b><p>“Passionate”, “empowering” and “unlock their potential” sit in thousands of coach bios. They tell the reader nothing about this coach.</p></div></div>
+        <div><span class="k">2</span><div><b>Swap a promise for an observation</b><p>“Promoted for being great at the job, then handed a team with zero instructions” is something only a working coach would notice.</p></div></div>
+        <div><span class="k">3</span><div><b>End on a door, not a list</b><p>“Here's the first one I make them have…” pulls the reader into the next line instead of five interchangeable tips.</p></div></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:19px;margin-top:48px">Carousels</h3>
+    <div class="grid2 car" style="margin-top:14px;gap:24px">
+      <figure style="margin:0"><div class="frame"><img src="pf-carousel-voice.jpg" width="630" height="569" loading="lazy" alt="LinkedIn document carousel by Drishti Sen titled 5 LinkedIn Voice Mistakes, 8 pages"></div><figcaption><b>5 LinkedIn Voice Mistakes</b><span class="mono">8 slides · LinkedIn document · 2026</span></figcaption></figure>
+      <figure style="margin:0"><div class="frame"><img src="pf-carousel-about.jpg" width="630" height="569" loading="lazy" alt="LinkedIn document carousel by Drishti Sen titled 5 LinkedIn About Section Mistakes, 9 pages"></div><figcaption><b>5 LinkedIn About Section Mistakes</b><span class="mono">9 slides · LinkedIn document · 2026</span></figcaption></figure>
+    </div>
+
+    <h3 style="font-size:19px;margin-top:48px">How I write for a client</h3>
+    <div class="three">
+      <div><span class="mono">Step 1</span><b>Inputs first</b><p>A call or its transcript, the client's last 20 posts, and how they talk when annoyed.</p></div>
+      <div><span class="mono">Step 2</span><b>A one-page voice guide</b><p>Sentence length, openers, vocabulary, banned phrases — updated after every round of edits.</p></div>
+      <div><span class="mono">Step 3</span><b>Brief to final</b><p>Draft, revise, final. No number goes in unless it came from the client or a named source.</p></div>
+    </div>
+    <div class="rows" style="margin-top:28px">
+      <span class="mono">Formats</span><p>LinkedIn posts and carousels, blogs, newsletters, website copy, email sequences</p>
+      <span class="mono">Client work</span><p>Published under clients' names, so it isn't reproduced here. A writing-samples PDF with six full posts and a sample voice guide is available on request.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFILE ============ -->
+<section class="block" style="margin-top:56px" aria-labelledby="profile">
+  <div class="wrap">
+    <h2 id="profile">Timeline</h2>
+    <div class="tl">
+      <div><span class="mono">Jan 2026 – now</span><span><b>AI Automation Specialist (n8n)</b> · Freelance</span></div>
+      <div><span class="mono">Sep 2024 – Jun 2026</span><span><b>Content Moderator</b> · WEJOY PTE. LTD.</span></div>
+      <div><span class="mono">Jul 2022 – Apr 2024</span><span><b>Virtual Customer Support Associate</b> · Amazon</span></div>
+      <div><span class="mono">Jul 2022 – now</span><span><b>Content Writer &amp; Ghostwriter</b> · Self-employed</span></div>
+      <div><span class="mono">Jan 2022 – now</span><span><b>AI Chatbot Trainer</b> · Freelance</span></div>
+      <div><span class="mono">Jun 2019 – Jul 2022</span><span><b>BBA</b> · Dinabandhu Andrews Institute of Technology &amp; Management, Kolkata</span></div>
+    </div>
+    <h3 style="font-size:19px;margin-top:40px">Skills and tools</h3>
+    <div class="skills">
+      <div><span class="mono">Support</span><p>Chat, call and email support; issue resolution; escalation notes; SOPs; handover docs</p></div>
+      <div><span class="mono">Trust &amp; safety</span><p>Guideline-based review at volume; harmful-content decisions; edge-case escalation</p></div>
+      <div><span class="mono">AI evaluation</span><p>Response rating and ranking; correction guidance; data annotation; prompt writing</p></div>
+      <div><span class="mono">Writing</span><p>Ghostwriting; voice guides; editing; Hindi and Bengali to English translation</p></div>
+      <div><span class="mono">Automation</span><p>n8n, Gemini API, webhooks, REST APIs, Gmail API, WhatsApp Cloud API, Apify</p></div>
+      <div><span class="mono">Everyday tools</span><p>Google Workspace, Excel (Power Query), ChatGPT, Claude, Gemini, Canva</p></div>
+    </div>
+    <p style="margin:18px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:15px"><span class="mono">Languages&nbsp;&nbsp;</span>English (proficient) · Hindi (proficient) · Bengali (native)</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="big">Available now — remote, full-time or part-time, 2–11 PM IST for US overlap.</p>
+    <div class="links">
+      <a class="btn" href="mailto:drishtisen16@gmail.com">drishtisen16@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/drishtisen">LinkedIn</a>
+      <a class="btn ghost" href="Drishti-Sen-Portfolio.pdf" download>Download PDF</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">Last updated October 2026 · Kolkata · IST (UTC+5:30)</span>
+    <a class="mono" href="https://drishtisen16.github.io/" style="color:var(--accent)">← drishtisen16.github.io</a>
+  </div>
+</footer>
+</body>
+</html>

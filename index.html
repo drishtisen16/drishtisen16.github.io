@@ -41,8 +41,8 @@
 </script>
 
 <script>
-/* Currency is set by location only: a browser on India time sees rupee prices, everyone else sees dollar prices. No switch, no tracking, no network call. */
-(function(){var c='USD';try{var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'');if(tz==='Asia/Kolkata'||tz==='Asia/Calcutta'){c='INR';}}catch(e){}window.__cur=c;if(c==='INR'){document.documentElement.classList.add('inr');}try{localStorage.removeItem('ds-cur');}catch(e){}})();
+/* Currency is set by location only: a browser on India time sees rupee prices, everyone else sees dollar prices. No switch, no tracking, no network request. */
+(function(){var c='USD';try{var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'');if(tz==='Asia/Kolkata'||tz==='Asia/Calcutta'){c='INR';}}catch(e){}window.__cur=c;if(c==='INR'){document.documentElement.classList.add('inr');document.addEventListener('DOMContentLoaded',function(){var p=document.querySelectorAll('[data-inr]');for(var i=0;i<p.length;i++){p[i].textContent=p[i].getAttribute('data-inr');}document.documentElement.classList.add('cur-done');});}try{localStorage.removeItem('ds-cur');}catch(e){}})();
 /* Motion is on unless the visitor asked their device to reduce it. */
 (function(){try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: no-preference)').matches){document.documentElement.classList.add('motion');}}catch(e){}})();
 </script>
@@ -73,6 +73,7 @@ button{font:inherit}
 /* price by location */
 html:not(.inr) .p-inr{display:none}
 html.inr .p-usd{display:none}
+html.inr:not(.cur-done) [data-inr]{visibility:hidden}
 
 /* ---------- type ---------- */
 .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -552,14 +553,11 @@ footer{background:var(--night);color:var(--nmuted);border-top:1px solid var(--nl
           <a class="tlink p-inr" href="https://drishtisen16.app.n8n.cloud/webhook/5aa72f23-6598-4ff6-8551-7d1e520760d9/chat" target="_blank" rel="noopener">Try the web demo &rarr;</a>
           <a class="tlink" href="#demo">Watch the WhatsApp run</a>
         </div>
-        <div class="metric"><b>2.2 s</b><span>question &rarr; reply sent &middot; run #2319, 28 Sep 2026</span></div>
         <details class="more">
           <summary>How it's built</summary>
           <div class="body">
             <p><b>The problem.</b> Chatbots that answer everything are a liability: they invent prices and policies. Chatbots that answer nothing are a phone tree. Small businesses need the middle: instant answers from their own facts, and honesty about everything else.</p>
             <p><b>The build.</b> n8n with a chat or WhatsApp trigger, code-based memory and guards, and Gemini under a prompt that forbids inventing facts. Contact details are only accepted if the customer actually typed them. Every question is logged with an answered-from-the-sheet flag, so the owner sees exactly where the sheet has gaps.</p>
-            <p><b>Where it started.</b> The first version ran on Telegram, with production runs of 8.6 and 9.6 seconds tested from a real phone: the opening-hours question answered exactly from the sheet, the yoga-mats question honestly deflected.</p>
-            <figure><div class="shot"><img loading="lazy" decoding="async" src="telegram-rag-assistant.jpg" width="1456" height="709" alt="The Telegram version: the real conversation and the n8n production log side by side"></div><figcaption class="shot-cap">The Telegram version: the real conversation and the production log in one frame.</figcaption></figure>
           </div>
         </details>
       </article>
@@ -643,14 +641,14 @@ footer{background:var(--night);color:var(--nmuted);border-top:1px solid var(--nl
     <div class="flow" id="flow">
       <span class="bar" aria-hidden="true"></span>
       <div class="step"><span class="dot">01</span><span class="k">Trigger</span><h3>You send one link or one problem</h3><p>A form that leaks leads. An inbox that's always behind. No brief needed.</p></div>
-      <div class="step"><span class="dot">02</span><span class="k">Call</span><h3>Free 20-minute call</h3><p>I tell you exactly what I'd build and what it costs, then send a one-page quote the same day.</p></div>
+      <div class="step"><span class="dot">02</span><span class="k">Plan</span><h3>A written plan</h3><p>I write down exactly what I'd build and what it costs, as a one-page quote the same day.</p></div>
       <div class="step"><span class="dot">03</span><span class="k">Build</span><h3>I build it on your accounts</h3><p>Your n8n, your Google account, your API keys. Flat price, 5 days to 2 weeks.</p></div>
       <div class="step"><span class="dot">04</span><span class="k">Test run</span><h3>You watch a real run succeed</h3><p>End-to-end test before handover. Then plain-language docs and a week of free fixes.</p></div>
     </div>
     <div class="own">
       <div class="rv"><b>Your accounts, your system</b><p>Built on your n8n, Sheets and API keys. No dependence on me, no subscription to me.</p></div>
       <div class="rv d1"><b>Tested end to end</b><p>You watch a real run succeed before handover, screenshots included.</p></div>
-      <div class="rv d2"><b>Plain-language docs</b><p>A walkthrough your team can follow without me on the call.</p></div>
+      <div class="rv d2"><b>Plain-language docs</b><p>A walkthrough your team can follow without me there.</p></div>
       <div class="rv d3"><b>A week of free fixes</b><p>If something breaks in week one, it's mine to fix.</p></div>
     </div>
     <blockquote class="quote rv">
@@ -666,23 +664,23 @@ footer{background:var(--night);color:var(--nmuted);border-top:1px solid var(--nl
     <div class="sec-head">
       <p class="eyebrow rv">Pricing</p>
       <h2 id="price-title" class="rv d1">Flat, scoped, <em>no surprises.</em></h2>
-      <p class="lede rv d2">50% to start, 50% after you've watched a real test run. <span class="p-inr">The advance can be paid by UPI or bank transfer. </span>Custom workflows are quoted after a free 20-minute call.</p>
+      <p class="lede rv d2">50% to start, 50% after you've watched a real test run. <span class="p-inr">The advance can be paid by UPI or bank transfer. </span>Custom workflows get a written quote — send the problem in one message and I reply with what I'd build and the price.</p>
     </div>
 
     <p class="pgroup">Automation</p>
     <div class="price-grid">
-      <div class="pcard rv"><h3>Any single automation</h3><div class="amt"><span class="p-usd">$300</span><span class="p-inr">&#8377;15,000</span></div><span class="del">5 days</span><p>Pick the one workflow that's costing you most: a form nobody watches, an inbox that's always behind, a report you rebuild by hand. Built end to end on your own n8n and Google accounts.</p></div>
-      <div class="pcard rv d1"><span class="flag">Start here</span><h3>Never Lose a Lead stack</h3><div class="amt"><span class="p-usd">$500</span><span class="p-inr">&#8377;25,000</span></div><span class="del">7 days</span><p>Lead capture and an AI assistant, built to work together. Every enquiry logged, you notified, the lead answered in seconds; anything sensitive comes to you as a draft.</p></div>
-      <div class="pcard hi rv d2"><span class="flag">New</span><h3>WhatsApp front desk</h3><div class="amt"><span class="p-usd">$450</span><span class="p-inr">&#8377;22,000</span></div><span class="del">7 days + Meta's approval</span><p>The front desk on your own WhatsApp number, on Meta's official API. It only replies to people who message you first; Meta bills its message fees to you directly. <a href="#demo">See it working</a></p></div>
-      <div class="pcard rv"><h3>Chat assistant, website or Telegram</h3><div class="amt"><span class="p-usd">$350</span><span class="p-inr">&#8377;18,000</span></div><span class="del">5 days</span><p>Answers only from your own Google Sheet, admits what it doesn't know, and flags the exact question so your answers grow. The assistant on this page is one.</p></div>
-      <div class="pcard rv d1"><h3>Voice-matched content engine</h3><div class="amt"><span class="p-usd">$400</span><span class="p-inr">&#8377;20,000</span></div><span class="del">7 days</span><p>One input, nine drafts in your voice, delivered as a digest and logged to a content calendar. Nothing publishes until you approve.</p><span class="extra">Optional human edit: <span class="p-usd">+$150/mo</span><span class="p-inr">+&#8377;7,000/mo</span></span></div>
-      <div class="pcard rv d2"><h3>Full stack, all four systems</h3><div class="amt"><span class="p-usd">$900</span><span class="p-inr">&#8377;45,000</span></div><span class="del">2 weeks</span><p>All four builds as one set: shared sheets, one consistent voice, one handover session. The cheapest price per system.</p></div>
+      <div class="pcard rv"><h3>Any single automation</h3><div class="amt"><span data-inr="&#8377;15,000">$300</span></div><span class="del">5 days</span><p>Pick the one workflow that's costing you most: a form nobody watches, an inbox that's always behind, a report you rebuild by hand. Built end to end on your own n8n and Google accounts.</p></div>
+      <div class="pcard rv d1"><span class="flag">Start here</span><h3>Never Lose a Lead stack</h3><div class="amt"><span data-inr="&#8377;25,000">$500</span></div><span class="del">7 days</span><p>Lead capture and an AI assistant, built to work together. Every enquiry logged, you notified, the lead answered straight away; anything sensitive comes to you as a draft.</p></div>
+      <div class="pcard hi rv d2"><span class="flag">New</span><h3>WhatsApp front desk</h3><div class="amt"><span data-inr="&#8377;22,000">$450</span></div><span class="del">7 days + Meta's approval</span><p>The front desk on your own WhatsApp number, on Meta's official API. It only replies to people who message you first; Meta bills its message fees to you directly. <a href="#demo">See it working</a></p></div>
+      <div class="pcard rv"><h3>Chat assistant for your website</h3><div class="amt"><span data-inr="&#8377;18,000">$350</span></div><span class="del">5 days</span><p>Answers only from your own Google Sheet, admits what it doesn't know, and flags the exact question so your answers grow. The assistant on this page is one.</p></div>
+      <div class="pcard rv d1"><h3>Voice-matched content engine</h3><div class="amt"><span data-inr="&#8377;20,000">$400</span></div><span class="del">7 days</span><p>One input, nine drafts in your voice, delivered as a digest and logged to a content calendar. Nothing publishes until you approve.</p><span class="extra">Optional human edit: <span data-inr="+&#8377;7,000/mo">+$150/mo</span></span></div>
+      <div class="pcard rv d2"><h3>Full stack, all four systems</h3><div class="amt"><span data-inr="&#8377;45,000">$900</span></div><span class="del">2 weeks</span><p>All four builds as one set: shared sheets, one consistent voice, one handover session. The cheapest price per system.</p></div>
     </div>
 
     <p class="pgroup">Writing</p>
     <div class="price-grid">
-      <div class="pcard rv"><h3>LinkedIn profile &amp; resume makeover</h3><div class="amt"><span class="p-usd">$50&ndash;80</span><span class="p-inr">&#8377;2,500&ndash;4,000</span></div><span class="del">48 hours</span><p>Headline, About and experience rewritten so a recruiter gets what you do in the first two lines. ATS-safe resume, before and after side by side.</p></div>
-      <div class="pcard rv d1"><h3>LinkedIn content sprint, 8 posts</h3><div class="amt"><span class="p-usd">$150&ndash;200</span><span class="p-inr">&#8377;7,000&ndash;10,000</span></div><span class="del">2 weeks</span><p>One 20-minute call to pull out your stories, then eight posts in your voice. You approve every one, and you keep the drafts either way.</p></div>
+      <div class="pcard rv"><h3>LinkedIn profile &amp; resume makeover</h3><div class="amt"><span data-inr="&#8377;2,500&ndash;4,000">$50&ndash;80</span></div><span class="del">48 hours</span><p>Headline, About and experience rewritten so a recruiter gets what you do in the first two lines. ATS-safe resume, before and after side by side.</p></div>
+      <div class="pcard rv d1"><h3>LinkedIn content sprint, 8 posts</h3><div class="amt"><span data-inr="&#8377;7,000&ndash;10,000">$150&ndash;200</span></div><span class="del">2 weeks</span><p>A short written questionnaire to pull out your stories, then eight posts in your voice. You approve every one, and you keep the drafts either way.</p></div>
     </div>
   </div>
 </section>
@@ -740,7 +738,7 @@ footer{background:var(--night);color:var(--nmuted);border-top:1px solid var(--nl
       <details><summary>What if something breaks?</summary><div class="a">You get plain-language documentation and one week of free fixes after handover. If something breaks in that week, it's mine to fix.</div></details>
       <details><summary>Will WhatsApp ban my number?</summary><div class="a">The front desk uses Meta's official WhatsApp Cloud API on your own Meta account, and it only replies to people who message you first: no broadcasts, no bulk messages, none of the unofficial tools that get numbers banned.</div></details>
       <details><summary>Which languages can the assistant reply in?</summary><div class="a">The demo replies in English, Hindi and Bengali, including Hinglish and Banglish typed in English letters. It answers in the language the customer writes in.</div></details>
-      <details><summary>How do we start?</summary><div class="a">Send one link or one problem. We have a free 20-minute call, I send a one-page quote the same day, and I start once the 50% advance is in.</div></details>
+      <details><summary>How do we start?</summary><div class="a">Send one link or one problem in one message. I reply with what I'd build and a one-page quote the same day, and I start once the 50% advance is in.</div></details>
     </div>
   </div>
 </section>
